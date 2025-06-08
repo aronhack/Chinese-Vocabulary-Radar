@@ -1,0 +1,37 @@
+{
+    "extensionName": {
+      "message": "Chinese Vocabulary Radar"
+    },
+    "extensionDescription": {
+      "message": "Scan and highlight Chinese vocabulary on web pages"
+    },
+    "loadedVocabulary": {
+    "message": "Loaded $COUNT$ vocabulary words",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "scanButton": {
+    "message": "Scan"
+  },
+  "clearButton": {
+    "message": "Clear"
+  },
+  "scanning": {
+    "message": "Scanning..."
+  },
+  "highlightsCleared": {
+    "message": "Highlights cleared"
+  },
+  "failedToClearHighlights": {
+    "message": "Failed to clear highlights"
+  },
+  "readyToScan": {
+    "message": "Ready to scan..."
+  },
+  "autoScan": {
+    "message": "Auto Scan"
+  }
+}

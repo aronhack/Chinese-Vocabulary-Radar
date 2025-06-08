@@ -1,0 +1,45 @@
+{
+    "extensionName": {
+      "message": "中國用語雷達"
+    },
+    "extensionDescription": {
+      "message": "掃描並標示網頁中的中國用語"
+    },
+    "loadedVocabulary": {
+      "message": "已載入 $COUNT$ 個單字",
+      "placeholders": {
+        "count": {
+          "content": "$1"
+        }
+      }
+    },
+    "scanButton": {
+      "message": "掃描"
+    },
+    "clearButton": {
+      "message": "清除"
+    },
+    "scanning": {
+      "message": "掃描中..."
+    },
+    "highlightsCleared": {
+      "message": "已清除標示"
+    },
+    "failedToClearHighlights": {
+      "message": "無法清除標示"
+    },
+    "scanCompleted": {
+      "message": "已標示 $COUNT$ 個詞語",
+      "placeholders": {
+        "count": {
+          "content": "$1"
+        }
+      }
+    },
+    "readyToScan": {
+      "message": "準備掃描..."
+    },
+    "autoScan": {
+      "message": "自動掃描"
+    }
+  }

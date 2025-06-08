@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        width: 300px;
+        padding: 20px;
+        font-family: "Microsoft JhengHei", "PingFang TC", "Hiragino Sans CNS", "Apple LiGothic Medium", sans-serif;
+      }
+      
+      h1 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #333;
+      }
+      #version-info {
+        font-size: 12px;
+        color: #666;
+        margin-left: 5px;
+      }
+      
+      .button-container {
+        margin-bottom: 15px;
+      }
+      
+      button {
+        padding: 10px 15px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      
+      .primary {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+      .primary:hover {
+        background-color: #45a049;
+      }
+      
+      .secondary {
+        background-color: #f44336;
+        color: white;
+      }
+      
+      .secondary:hover {
+        background-color: #da190b;
+      }
+      
+      #status-text {
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        font-size: 12px;
+        line-height: 1.4;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header" style="display: flex; align-items: center; justify-content: flex-start; margin-bottom: 15px;">
+      <h1 id="extension-name" data-i18n="extensionName"></h1>
+      <div id="version-info">v1.1</div>
+    </div>
+
+    <div class="button-container">
+      <button id="scan-button" class="primary" data-i18n="scanButton"></button>
+      <button id="clear-button" class="secondary" data-i18n="clearButton"></button>
+    </div>
+    
+    <div class="switch-container">
+      <label class="switch">
+        <span class="switch-label" id="auto-scan-label" data-i18n="autoScan"></span>
+      </label>
+      <input type="checkbox" id="auto-scan-switch">
+    </div>
+
+    <div id="status-text" class="text" data-i18n="readyToScan"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
