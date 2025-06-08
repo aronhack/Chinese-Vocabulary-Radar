@@ -132,7 +132,7 @@
     {
         "chinese": "互聯網",
         "taiwanese": "網際網路",
-        "english": "Internet"
+        "english": ""
     },
     {
         "chinese": "亞像素",
@@ -276,13 +276,13 @@
     },
     {
         "chinese": "傳感器",
-        "taiwanese": "感測器、感光元件",
-        "english": ""
+        "taiwanese": "感測器",
+        "english": "Sensor"
     },
     {
         "chinese": "優化",
-        "taiwanese": "最佳化、改進",
-        "english": ""
+        "taiwanese": "最佳化",
+        "english": "Optimization"
     },
     {
         "chinese": "兄弟院校",
@@ -436,8 +436,8 @@
     },
     {
         "chinese": "分辨率",
-        "taiwanese": "解析度、取樣頻率",
-        "english": ""
+        "taiwanese": "解析度",
+        "english": "Resolution"
     },
     {
         "chinese": "列車員",
@@ -521,8 +521,8 @@
     },
     {
         "chinese": "匹配",
-        "taiwanese": "配對、對應、吻合、契合",
-        "english": ""
+        "taiwanese": "比對",
+        "english": "Match"
     },
     {
         "chinese": "升級",
@@ -547,7 +547,7 @@
     {
         "chinese": "協議",
         "taiwanese": "協定",
-        "english": "protocol"
+        "english": ""
     },
     {
         "chinese": "博取眼球",
@@ -571,8 +571,8 @@
     },
     {
         "chinese": "卸載",
-        "taiwanese": "解除安裝",
-        "english": "uninstall"
+        "taiwanese": "移除",
+        "english": ""
     },
     {
         "chinese": "厄瓜多爾",
@@ -746,8 +746,8 @@
     },
     {
         "chinese": "回車",
-        "taiwanese": "輸入鍵",
-        "english": "Enter"
+        "taiwanese": "enter",
+        "english": ""
     },
     {
         "chinese": "回頭客",
@@ -757,7 +757,7 @@
     {
         "chinese": "固件",
         "taiwanese": "韌體",
-        "english": "Firmware"
+        "english": ""
     },
     {
         "chinese": "固態硬盤",
@@ -782,7 +782,7 @@
     {
         "chinese": "圖像",
         "taiwanese": "影像",
-        "english": "Image"
+        "english": ""
     },
     {
         "chinese": "圖元",
@@ -1147,7 +1147,7 @@
     {
         "chinese": "屏幕",
         "taiwanese": "螢幕",
-        "english": "screenglish"
+        "english": ""
     },
     {
         "chinese": "屏幕文字",
@@ -1447,7 +1447,7 @@
     {
         "chinese": "打印",
         "taiwanese": "列印",
-        "english": "Print"
+        "english": ""
     },
     {
         "chinese": "打印機",
@@ -1647,7 +1647,7 @@
     {
         "chinese": "支持",
         "taiwanese": "支援",
-        "english": "Support"
+        "english": ""
     },
     {
         "chinese": "收轉臺",
@@ -1857,7 +1857,7 @@
     {
         "chinese": "服務器",
         "taiwanese": "伺服器",
-        "english": "Server"
+        "english": "server"
     },
     {
         "chinese": "期房",
@@ -2122,7 +2122,7 @@
     {
         "chinese": "激光",
         "taiwanese": "雷射",
-        "english": "Laser"
+        "english": ""
     },
     {
         "chinese": "激光唱機",
@@ -2141,8 +2141,8 @@
     },
     {
         "chinese": "激活",
-        "taiwanese": "打開、啟用",
-        "english": ""
+        "taiwanese": "啟用",
+        "english": "Activation"
     },
     {
         "chinese": "激活碼",
@@ -2297,7 +2297,7 @@
     {
         "chinese": "登錄",
         "taiwanese": "登入",
-        "english": "Login/Logon"
+        "english": ""
     },
     {
         "chinese": "發光二極管",
@@ -2427,7 +2427,7 @@
     {
         "chinese": "硬件",
         "taiwanese": "硬體",
-        "english": "Hardware"
+        "english": ""
     },
     {
         "chinese": "硬傷",
@@ -2442,7 +2442,7 @@
     {
         "chinese": "硬盤",
         "taiwanese": "硬碟",
-        "english": "Hard drive"
+        "english": ""
     },
     {
         "chinese": "碰瓷",
@@ -2546,8 +2546,8 @@
     },
     {
         "chinese": "端口",
-        "taiwanese": "通訊埠",
-        "english": ""
+        "taiwanese": "埠",
+        "english": "Port"
     },
     {
         "chinese": "笑星",
@@ -2921,13 +2921,13 @@
     },
     {
         "chinese": "補丁",
-        "taiwanese": "更新檔",
-        "english": "Update File"
+        "taiwanese": "修補程式、破解工具",
+        "english": ""
     },
     {
         "chinese": "視頻",
-        "taiwanese": "視訊 / 影片",
-        "english": "Video"
+        "taiwanese": "影片、視頻",
+        "english": ""
     },
     {
         "chinese": "視頻電話",
@@ -3111,7 +3111,7 @@
     },
     {
         "chinese": "車照",
-        "taiwanese": "駕駛執照",
+        "taiwanese": "行車執照",
         "english": ""
     },
     {
@@ -3122,12 +3122,12 @@
     {
         "chinese": "軟件",
         "taiwanese": "軟體",
-        "english": "software"
+        "english": ""
     },
     {
         "chinese": "軟件包",
         "taiwanese": "套裝軟體",
-        "english": "Software package"
+        "english": ""
     },
     {
         "chinese": "軟包裝",
@@ -3456,8 +3456,8 @@
     },
     {
         "chinese": "音頻",
-        "taiwanese": "音訊 / 音檔",
-        "english": "Audio"
+        "taiwanese": "音訊",
+        "english": ""
     },
     {
         "chinese": "頂不住",
@@ -3561,8 +3561,8 @@
     },
     {
         "chinese": "高清",
-        "taiwanese": "高畫質、高音質",
-        "english": ""
+        "taiwanese": "高畫質",
+        "english": "High Definition"
     },
     {
         "chinese": "高玩",
@@ -3616,13 +3616,13 @@
     },
     {
         "chinese": "默認",
-        "taiwanese": "預設、原本",
-        "english": ""
+        "taiwanese": "預設",
+        "english": "Default"
     },
     {
         "chinese": "鼠標",
-        "taiwanese": "滑鼠",
-        "english": "mouse"
+        "taiwanese": "游標",
+        "english": ""
     },
     {
         "chinese": "龍傲天",
