@@ -6,5 +6,17 @@
 
 這個工具的目的是提升台灣民眾對語言使用的敏感度，並非製造衝突與對立，因此，此工具命名為「中國用語雷達」，而不是帶有貶義的「支語雷達」。
 
+
+## 進階用法 - 搭配LLM使用
+你可以在chrome-extension的資料夾中找到`taiwan_china_vocabs.json`，這個檔案包含了所有台灣與中國用語的資料。點擊下圖的按鈕就可以取得這個檔案的連結。
+
+![get_json.jpg](screenshots/get_json.jpg)
+
+
+
+
+
+
 ## 內容授權
 中國用語雷達的原始碼授權為 [MIT](https://github.com/aronhack/Chinese-Vocabulary-Radar/blob/main/LICENSE.txt)，文字段落以 [CC 0 公眾領域](https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hant)釋出，你可以盡情分享、改寫或用作商業用途。
+
