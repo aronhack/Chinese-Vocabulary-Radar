@@ -7,4 +7,4 @@
 這個工具的目的是提升台灣民眾對語言使用的敏感度，並非製造衝突與對立，因此，此工具命名為「中國用語雷達」，而不是帶有貶義的「支語雷達」。
 
 ## 內容授權
-中國用語雷達的原始碼授權為 [MIT](https://github.com/caris-events/invade/blob/master/LICENSE，文字段落以 [CC 0 公眾領域](https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hant)釋出，你可以盡情分享、改寫或用作商業用途。
+中國用語雷達的原始碼授權為 [MIT](https://github.com/aronhack/Chinese-Vocabulary-Radar/blob/main/LICENSE.txt)，文字段落以 [CC 0 公眾領域](https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hant)釋出，你可以盡情分享、改寫或用作商業用途。
