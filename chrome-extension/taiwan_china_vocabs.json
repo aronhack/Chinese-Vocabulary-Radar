@@ -132,7 +132,7 @@
     {
         "chinese": "互聯網",
         "taiwanese": "網際網路",
-        "english": "Internet"
+        "english": ""
     },
     {
         "chinese": "亞像素",
@@ -142,7 +142,7 @@
     {
         "chinese": "交互",
         "taiwanese": "互動",
-        "english": ""
+        "english": "interact"
     },
     {
         "chinese": "京劇",
@@ -436,8 +436,8 @@
     },
     {
         "chinese": "分辨率",
-        "taiwanese": "解析度",
-        "english": "Resolution"
+        "taiwanese": "解析度、取樣頻率",
+        "english": ""
     },
     {
         "chinese": "列車員",
@@ -521,8 +521,8 @@
     },
     {
         "chinese": "匹配",
-        "taiwanese": "比對",
-        "english": "Match"
+        "taiwanese": "配對、對應、吻合、契合",
+        "english": ""
     },
     {
         "chinese": "升級",
@@ -572,7 +572,7 @@
     {
         "chinese": "卸載",
         "taiwanese": "解除安裝",
-        "english": "Uninstall"
+        "english": "uninstall"
     },
     {
         "chinese": "厄瓜多爾",
@@ -746,8 +746,8 @@
     },
     {
         "chinese": "回車",
-        "taiwanese": "enter",
-        "english": ""
+        "taiwanese": "輸入鍵",
+        "english": "Enter"
     },
     {
         "chinese": "回頭客",
@@ -757,7 +757,7 @@
     {
         "chinese": "固件",
         "taiwanese": "韌體",
-        "english": ""
+        "english": "Firmware"
     },
     {
         "chinese": "固態硬盤",
@@ -782,7 +782,7 @@
     {
         "chinese": "圖像",
         "taiwanese": "影像",
-        "english": ""
+        "english": "Image"
     },
     {
         "chinese": "圖元",
@@ -792,7 +792,7 @@
     {
         "chinese": "圖標",
         "taiwanese": "圖示",
-        "english": ""
+        "english": "Icon"
     },
     {
         "chinese": "圖瓦盧",
@@ -811,8 +811,8 @@
     },
     {
         "chinese": "在線",
-        "taiwanese": "線上、在線上",
-        "english": ""
+        "taiwanese": "線上",
+        "english": "Online"
     },
     {
         "chinese": "坦桑尼亞",
@@ -977,7 +977,7 @@
     {
         "chinese": "字節",
         "taiwanese": "位元組",
-        "english": ""
+        "english": "Byte"
     },
     {
         "chinese": "存儲",
@@ -1441,8 +1441,8 @@
     },
     {
         "chinese": "打印機",
-        "taiwanese": "列印機",
-        "english": ""
+        "taiwanese": "印表機",
+        "english": "printer"
     },
     {
         "chinese": "打橫泡",
@@ -1847,7 +1847,7 @@
     {
         "chinese": "服務器",
         "taiwanese": "伺服器",
-        "english": "Server"
+        "english": "server"
     },
     {
         "chinese": "期房",
@@ -1916,7 +1916,7 @@
     },
     {
         "chinese": "檔次",
-        "taiwanese": "級、級別",
+        "taiwanese": "等級",
         "english": ""
     },
     {
@@ -2112,7 +2112,7 @@
     {
         "chinese": "激光",
         "taiwanese": "雷射",
-        "english": "Laser"
+        "english": ""
     },
     {
         "chinese": "激光唱機",
@@ -2287,7 +2287,7 @@
     {
         "chinese": "登錄",
         "taiwanese": "登入",
-        "english": ""
+        "english": "Login/Logon"
     },
     {
         "chinese": "發光二極管",
@@ -2536,8 +2536,8 @@
     },
     {
         "chinese": "端口",
-        "taiwanese": "通訊埠",
-        "english": ""
+        "taiwanese": "埠",
+        "english": "Port"
     },
     {
         "chinese": "笑星",
@@ -2567,7 +2567,7 @@
     {
         "chinese": "筆記本電腦",
         "taiwanese": "筆記型電腦",
-        "english": "laptop computer"
+        "english": "Notebook"
     },
     {
         "chinese": "管飽",
@@ -2807,7 +2807,7 @@
     {
         "chinese": "芯片",
         "taiwanese": "晶片",
-        "english": "Chip"
+        "english": ""
     },
     {
         "chinese": "花帶子，黃帶",
@@ -2911,13 +2911,13 @@
     },
     {
         "chinese": "補丁",
-        "taiwanese": "修補程式、破解工具",
-        "english": ""
+        "taiwanese": "更新檔",
+        "english": "Update File"
     },
     {
         "chinese": "視頻",
-        "taiwanese": "視訊 / 影片",
-        "english": "Video"
+        "taiwanese": "影片、視頻",
+        "english": ""
     },
     {
         "chinese": "視頻電話",
@@ -2932,7 +2932,7 @@
     {
         "chinese": "計算機",
         "taiwanese": "電腦",
-        "english": ""
+        "english": "Computer"
     },
     {
         "chinese": "記憶棒",
@@ -2966,8 +2966,8 @@
     },
     {
         "chinese": "調試",
-        "taiwanese": "偵錯/除錯",
-        "english": "Debug"
+        "taiwanese": "除錯",
+        "english": ""
     },
     {
         "chinese": "謎語人",
@@ -3107,12 +3107,12 @@
     {
         "chinese": "軟件",
         "taiwanese": "軟體",
-        "english": "Software"
+        "english": ""
     },
     {
         "chinese": "軟件包",
         "taiwanese": "套裝軟體",
-        "english": "Software package"
+        "english": ""
     },
     {
         "chinese": "軟包裝",
@@ -3441,8 +3441,8 @@
     },
     {
         "chinese": "音頻",
-        "taiwanese": "音訊",
-        "english": ""
+        "taiwanese": "音訊 / 音檔",
+        "english": "Audio"
     },
     {
         "chinese": "頂不住",
@@ -3546,8 +3546,8 @@
     },
     {
         "chinese": "高清",
-        "taiwanese": "高畫質",
-        "english": "High Definition"
+        "taiwanese": "高畫質、高音質",
+        "english": ""
     },
     {
         "chinese": "高玩",
