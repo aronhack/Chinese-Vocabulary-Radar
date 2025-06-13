@@ -15,6 +15,26 @@
         "english": ""
     },
     {
+        "chinese": "crush",
+        "taiwanese": "暗戀對象",
+        "english": "crush"
+    },
+    {
+        "chinese": "emo",
+        "taiwanese": "悲從中來",
+        "english": "emo"
+    },
+    {
+        "chinese": "ins",
+        "taiwanese": "instagram/IG",
+        "english": "Instagram"
+    },
+    {
+        "chinese": "xx年/00後",
+        "taiwanese": "直接講年份/幾年級或o世代",
+        "english": ""
+    },
+    {
         "chinese": "一次性",
         "taiwanese": "免洗、拋棄式",
         "english": ""
@@ -35,8 +55,23 @@
         "english": ""
     },
     {
+        "chinese": "三文魚",
+        "taiwanese": "鮭魚",
+        "english": "salmon"
+    },
+    {
         "chinese": "三觀",
         "taiwanese": "價值觀",
+        "english": ""
+    },
+    {
+        "chinese": "上學",
+        "taiwanese": "讀書",
+        "english": "go to school"
+    },
+    {
+        "chinese": "上岸",
+        "taiwanese": "上榜",
         "english": ""
     },
     {
@@ -46,7 +81,7 @@
     },
     {
         "chinese": "上頭",
-        "taiwanese": "無法克制、群情激憤、腦衝",
+        "taiwanese": "有feel（fu）/有感",
         "english": ""
     },
     {
@@ -57,6 +92,11 @@
     {
         "chinese": "下崗",
         "taiwanese": "失業",
+        "english": ""
+    },
+    {
+        "chinese": "下頭",
+        "taiwanese": "很解",
         "english": ""
     },
     {
@@ -115,6 +155,11 @@
         "english": "Republic of Yemenglish"
     },
     {
+        "chinese": "乾/油皮",
+        "taiwanese": "乾/油肌",
+        "english": "dry/oily skin"
+    },
+    {
         "chinese": "二哈",
         "taiwanese": "哈士奇",
         "english": ""
@@ -131,8 +176,8 @@
     },
     {
         "chinese": "互聯網",
-        "taiwanese": "網際網路",
-        "english": ""
+        "taiwanese": "網路",
+        "english": "internet"
     },
     {
         "chinese": "亞像素",
@@ -240,6 +285,11 @@
         "english": ""
     },
     {
+        "chinese": "俯臥撐",
+        "taiwanese": "伏地挺身",
+        "english": "push-up"
+    },
+    {
         "chinese": "個人計算機",
         "taiwanese": "個人電腦",
         "english": ""
@@ -278,6 +328,11 @@
         "chinese": "傳感器",
         "taiwanese": "感測器",
         "english": "Sensor"
+    },
+    {
+        "chinese": "億點點",
+        "taiwanese": "超大一點",
+        "english": ""
     },
     {
         "chinese": "優化",
@@ -330,6 +385,11 @@
         "english": ""
     },
     {
+        "chinese": "內函",
+        "taiwanese": "影射",
+        "english": "imply"
+    },
+    {
         "chinese": "內卷",
         "taiwanese": "過度競爭、內鬥",
         "english": ""
@@ -337,7 +397,12 @@
     {
         "chinese": "內存",
         "taiwanese": "記憶體",
-        "english": ""
+        "english": "memory"
+    },
+    {
+        "chinese": "內核",
+        "taiwanese": "核心",
+        "english": "core"
     },
     {
         "chinese": "內貿",
@@ -360,6 +425,11 @@
         "english": ""
     },
     {
+        "chinese": "全網",
+        "taiwanese": "整個網路上",
+        "english": ""
+    },
+    {
         "chinese": "全線飄紅",
         "taiwanese": "長紅",
         "english": ""
@@ -368,6 +438,11 @@
         "chinese": "八旗子弟",
         "taiwanese": "紈褲子弟",
         "english": ""
+    },
+    {
+        "chinese": "公交",
+        "taiwanese": "公車",
+        "english": "bus"
     },
     {
         "chinese": "公交站",
@@ -383,6 +458,11 @@
         "chinese": "公房",
         "taiwanese": "公家宿舍",
         "english": ""
+    },
+    {
+        "chinese": "共情",
+        "taiwanese": "共感",
+        "english": "empathy"
     },
     {
         "chinese": "兼容",
@@ -407,6 +487,11 @@
     {
         "chinese": "冷麵",
         "taiwanese": "涼麵",
+        "english": ""
+    },
+    {
+        "chinese": "出片",
+        "taiwanese": "很好拍",
         "english": ""
     },
     {
@@ -550,6 +635,11 @@
         "english": ""
     },
     {
+        "chinese": "博主",
+        "taiwanese": "部落客/youtuber/KOL/穿搭帳",
+        "english": "blogger"
+    },
+    {
         "chinese": "博取眼球",
         "taiwanese": "引人注目、吸睛",
         "english": ""
@@ -642,7 +732,7 @@
     {
         "chinese": "合同",
         "taiwanese": "合約",
-        "english": ""
+        "english": "contract"
     },
     {
         "chinese": "吊空",
@@ -692,7 +782,7 @@
     {
         "chinese": "啞光",
         "taiwanese": "霧面",
-        "english": ""
+        "english": "matte"
     },
     {
         "chinese": "喇叭筒",
@@ -720,6 +810,11 @@
         "english": ""
     },
     {
+        "chinese": "嘎嘎好吃",
+        "taiwanese": "超好吃",
+        "english": ""
+    },
+    {
         "chinese": "嘴替",
         "taiwanese": "代言人、發聲筒",
         "english": ""
@@ -737,7 +832,7 @@
     {
         "chinese": "回放",
         "taiwanese": "重播",
-        "english": ""
+        "english": "replay"
     },
     {
         "chinese": "回滾",
@@ -840,6 +935,11 @@
         "english": "Packet"
     },
     {
+        "chinese": "堵車",
+        "taiwanese": "塞車",
+        "english": "traffic jam"
+    },
+    {
         "chinese": "塑料",
         "taiwanese": "塑膠、塑膠微粒",
         "english": ""
@@ -910,6 +1010,11 @@
         "english": ""
     },
     {
+        "chinese": "天花板",
+        "taiwanese": "xx界的勞斯萊斯/佼佼者",
+        "english": ""
+    },
+    {
         "chinese": "太卷了",
         "taiwanese": "過度競爭、內鬥",
         "english": "too competitive"
@@ -918,6 +1023,11 @@
         "chinese": "太牛了",
         "taiwanese": "太強了",
         "english": "too strong"
+    },
+    {
+        "chinese": "夾子音",
+        "taiwanese": "很ㄋㄟ",
+        "english": ""
     },
     {
         "chinese": "奇葩",
@@ -945,9 +1055,19 @@
         "english": ""
     },
     {
+        "chinese": "奶茶",
+        "taiwanese": "珍奶/手搖/飲料",
+        "english": "bubble tea"
+    },
+    {
         "chinese": "妹紙",
         "taiwanese": "女生、正妹",
         "english": ""
+    },
+    {
+        "chinese": "姥姥",
+        "taiwanese": "奶奶/阿嬤/阿婆",
+        "english": "grandma"
     },
     {
         "chinese": "婚外戀",
@@ -956,8 +1076,8 @@
     },
     {
         "chinese": "媽生",
-        "taiwanese": "好膚質、好看",
-        "english": ""
+        "taiwanese": "天生",
+        "english": "natural"
     },
     {
         "chinese": "嫩膚",
@@ -1010,6 +1130,11 @@
         "english": ""
     },
     {
+        "chinese": "官宣",
+        "taiwanese": "正式宣布、發表/公開",
+        "english": "official announcement"
+    },
+    {
         "chinese": "寄",
         "taiwanese": "完蛋了、GG",
         "english": ""
@@ -1045,6 +1170,11 @@
         "english": ""
     },
     {
+        "chinese": "寶寶",
+        "taiwanese": "寶貝/北鼻",
+        "english": ""
+    },
+    {
         "chinese": "封禁",
         "taiwanese": "封鎖",
         "english": ""
@@ -1070,8 +1200,18 @@
         "english": ""
     },
     {
+        "chinese": "小作文",
+        "taiwanese": "小論文",
+        "english": ""
+    },
+    {
         "chinese": "小區",
         "taiwanese": "社區",
+        "english": "community"
+    },
+    {
+        "chinese": "小哥哥",
+        "taiwanese": "大哥/阿弟仔",
         "english": ""
     },
     {
@@ -1086,7 +1226,7 @@
     },
     {
         "chinese": "小姊姊",
-        "taiwanese": "正妹",
+        "taiwanese": "大姐/阿妹仔",
         "english": ""
     },
     {
@@ -1113,6 +1253,11 @@
         "chinese": "尖子",
         "taiwanese": "傑出人士",
         "english": ""
+    },
+    {
+        "chinese": "尖端",
+        "taiwanese": "頂尖",
+        "english": "advanced"
     },
     {
         "chinese": "尬黑",
@@ -1147,7 +1292,7 @@
     {
         "chinese": "屏幕",
         "taiwanese": "螢幕",
-        "english": ""
+        "english": "screen"
     },
     {
         "chinese": "屏幕文字",
@@ -1162,6 +1307,11 @@
     {
         "chinese": "展賣",
         "taiwanese": "展售",
+        "english": ""
+    },
+    {
+        "chinese": "屬實",
+        "taiwanese": "真的是",
         "english": ""
     },
     {
@@ -1195,9 +1345,19 @@
         "english": ""
     },
     {
+        "chinese": "巨",
+        "taiwanese": "非常/超級",
+        "english": ""
+    },
+    {
         "chinese": "巨好吃",
         "taiwanese": "超好吃",
         "english": ""
+    },
+    {
+        "chinese": "差評",
+        "taiwanese": "負評",
+        "english": "negative review"
     },
     {
         "chinese": "巴羅克藝術",
@@ -1235,8 +1395,13 @@
         "english": ""
     },
     {
+        "chinese": "干飯",
+        "taiwanese": "吃飯",
+        "english": ""
+    },
+    {
         "chinese": "平替",
-        "taiwanese": "替代",
+        "taiwanese": "平價版/平民版",
         "english": ""
     },
     {
@@ -1300,6 +1465,16 @@
         "english": "very popular"
     },
     {
+        "chinese": "很絕",
+        "taiwanese": "超屌/超扯",
+        "english": ""
+    },
+    {
+        "chinese": "很頂",
+        "taiwanese": "很讚",
+        "english": ""
+    },
+    {
         "chinese": "後備",
         "taiwanese": "備份",
         "english": ""
@@ -1335,9 +1510,19 @@
         "english": ""
     },
     {
+        "chinese": "思路",
+        "taiwanese": "思考邏輯",
+        "english": ""
+    },
+    {
         "chinese": "性價比",
         "taiwanese": "CP值",
         "english": ""
+    },
+    {
+        "chinese": "性格",
+        "taiwanese": "個性",
+        "english": "personality"
     },
     {
         "chinese": "恰飯",
@@ -1397,6 +1582,11 @@
     {
         "chinese": "成服",
         "taiwanese": "成衣",
+        "english": ""
+    },
+    {
+        "chinese": "我丟",
+        "taiwanese": "哇靠",
         "english": ""
     },
     {
@@ -1462,7 +1652,7 @@
     {
         "chinese": "打車",
         "taiwanese": "叫車",
-        "english": ""
+        "english": "call a taxi"
     },
     {
         "chinese": "打醬油",
@@ -1500,9 +1690,14 @@
         "english": "Technical specifications"
     },
     {
+        "chinese": "抑鬱",
+        "taiwanese": "憂鬱",
+        "english": "depression"
+    },
+    {
         "chinese": "抑鬱症",
         "taiwanese": "憂鬱症",
-        "english": ""
+        "english": "depression"
     },
     {
         "chinese": "抓空字",
@@ -1532,6 +1727,11 @@
     {
         "chinese": "拉黑",
         "taiwanese": "封鎖",
+        "english": "block"
+    },
+    {
+        "chinese": "挺",
+        "taiwanese": "滿/很",
         "english": ""
     },
     {
@@ -1552,6 +1752,11 @@
     {
         "chinese": "掛機",
         "taiwanese": "連線",
+        "english": ""
+    },
+    {
+        "chinese": "探店",
+        "taiwanese": "踩點/跑咖",
         "english": ""
     },
     {
@@ -1598,6 +1803,11 @@
         "chinese": "撥號工具",
         "taiwanese": "撥號器",
         "english": "dialer"
+    },
+    {
+        "chinese": "撸鐵",
+        "taiwanese": "健身",
+        "english": "workout"
     },
     {
         "chinese": "撿漏",
@@ -1687,7 +1897,7 @@
     {
         "chinese": "教程",
         "taiwanese": "教學",
-        "english": ""
+        "english": "tutorial"
     },
     {
         "chinese": "教齡",
@@ -1703,6 +1913,11 @@
         "chinese": "散架",
         "taiwanese": "解體、撐不住",
         "english": ""
+    },
+    {
+        "chinese": "散粉",
+        "taiwanese": "蜜粉",
+        "english": "setting powder"
     },
     {
         "chinese": "數字唱片",
@@ -1770,6 +1985,11 @@
         "english": ""
     },
     {
+        "chinese": "方便面",
+        "taiwanese": "泡麵",
+        "english": "instant noodles"
+    },
+    {
         "chinese": "方便麵",
         "taiwanese": "生力麵、速食麵",
         "english": ""
@@ -1792,7 +2012,7 @@
     {
         "chinese": "早上好",
         "taiwanese": "早安",
-        "english": ""
+        "english": "good morning"
     },
     {
         "chinese": "旺銷，快銷",
@@ -1845,6 +2065,11 @@
         "english": "punk"
     },
     {
+        "chinese": "朋友圈",
+        "taiwanese": "交友圈",
+        "english": ""
+    },
+    {
         "chinese": "朋客",
         "taiwanese": "龐克族",
         "english": ""
@@ -1868,6 +2093,11 @@
         "chinese": "本地化",
         "taiwanese": "在地化、道地",
         "english": ""
+    },
+    {
+        "chinese": "本科",
+        "taiwanese": "大學、大學部",
+        "english": "undergraduate"
     },
     {
         "chinese": "本科生",
@@ -1897,6 +2127,11 @@
     {
         "chinese": "業餘活動",
         "taiwanese": "休閒活動",
+        "english": ""
+    },
+    {
+        "chinese": "槓",
+        "taiwanese": "嗆",
         "english": ""
     },
     {
@@ -1990,9 +2225,14 @@
         "english": ""
     },
     {
+        "chinese": "氛圍感",
+        "taiwanese": "vibe/feel(fu)",
+        "english": "vibe"
+    },
+    {
         "chinese": "水平",
         "taiwanese": "水準",
-        "english": ""
+        "english": "level"
     },
     {
         "chinese": "水門汀",
@@ -2030,9 +2270,19 @@
         "english": ""
     },
     {
+        "chinese": "治癒",
+        "taiwanese": "療癒",
+        "english": "healing"
+    },
+    {
         "chinese": "注銷",
         "taiwanese": "登出",
         "english": "Logout"
+    },
+    {
+        "chinese": "洗面奶",
+        "taiwanese": "洗面乳",
+        "english": "facial cleanser"
     },
     {
         "chinese": "洗髮水",
@@ -2063,6 +2313,11 @@
         "chinese": "海量",
         "taiwanese": "大量、眾多",
         "english": ""
+    },
+    {
+        "chinese": "消息",
+        "taiwanese": "訊息",
+        "english": "message"
     },
     {
         "chinese": "混血車",
@@ -2185,6 +2440,11 @@
         "english": ""
     },
     {
+        "chinese": "無語",
+        "taiwanese": "無言",
+        "english": "speechless"
+    },
+    {
         "chinese": "熒光屏",
         "taiwanese": "螢光幕",
         "english": ""
@@ -2220,6 +2480,21 @@
         "english": ""
     },
     {
+        "chinese": "爹味",
+        "taiwanese": "很直男",
+        "english": ""
+    },
+    {
+        "chinese": "牛油",
+        "taiwanese": "奶油",
+        "english": "butter"
+    },
+    {
+        "chinese": "牛油果",
+        "taiwanese": "酪梨",
+        "english": "avocado"
+    },
+    {
         "chinese": "牛逼",
         "taiwanese": "厲害",
         "english": ""
@@ -2227,6 +2502,11 @@
     {
         "chinese": "牛鼻子",
         "taiwanese": "關鍵、要害",
+        "english": ""
+    },
+    {
+        "chinese": "特別",
+        "taiwanese": "很",
         "english": ""
     },
     {
@@ -2243,6 +2523,11 @@
         "chinese": "獲得者",
         "taiwanese": "得主",
         "english": ""
+    },
+    {
+        "chinese": "獼猴桃",
+        "taiwanese": "奇異果",
+        "english": "kiwi"
     },
     {
         "chinese": "玩脫了",
@@ -2265,6 +2550,11 @@
         "english": "The Republic of Nauru"
     },
     {
+        "chinese": "生活碎片",
+        "taiwanese": "生活點滴",
+        "english": ""
+    },
+    {
         "chinese": "生物食品",
         "taiwanese": "天然食品",
         "english": ""
@@ -2285,6 +2575,11 @@
         "english": ""
     },
     {
+        "chinese": "異地戀",
+        "taiwanese": "遠距離",
+        "english": "long distance relationship"
+    },
+    {
         "chinese": "當前",
         "taiwanese": "目前",
         "english": ""
@@ -2303,6 +2598,16 @@
         "chinese": "發光二極管",
         "taiwanese": "發光二極體",
         "english": ""
+    },
+    {
+        "chinese": "發照片",
+        "taiwanese": "傳照片",
+        "english": "send photo"
+    },
+    {
+        "chinese": "發貨",
+        "taiwanese": "出貨",
+        "english": "ship"
     },
     {
         "chinese": "白嫖",
@@ -2411,7 +2716,7 @@
     },
     {
         "chinese": "破防",
-        "taiwanese": "深受打擊、玻璃心碎滿地、被說中了",
+        "taiwanese": "崩潰",
         "english": ""
     },
     {
@@ -2438,6 +2743,11 @@
         "chinese": "硬控",
         "taiwanese": "暈船、目不轉睛、浪費時間、傻掉",
         "english": ""
+    },
+    {
+        "chinese": "硬核",
+        "taiwanese": "哈扣/硬派",
+        "english": "hardcore"
     },
     {
         "chinese": "硬盤",
@@ -2478,6 +2788,11 @@
         "chinese": "科普",
         "taiwanese": "講解、分享、小常識",
         "english": ""
+    },
+    {
+        "chinese": "科研",
+        "taiwanese": "直接講領域",
+        "english": "research"
     },
     {
         "chinese": "移動電話",
@@ -2590,6 +2905,11 @@
         "english": ""
     },
     {
+        "chinese": "糟心",
+        "taiwanese": "心煩/阿雜",
+        "english": ""
+    },
+    {
         "chinese": "系列企業",
         "taiwanese": "關係企業",
         "english": ""
@@ -2610,9 +2930,19 @@
         "english": ""
     },
     {
+        "chinese": "級別",
+        "taiwanese": "層級",
+        "english": "level"
+    },
+    {
         "chinese": "索馬里",
         "taiwanese": "索馬利亞",
         "english": "The Somali Republic"
+    },
+    {
+        "chinese": "細狗",
+        "taiwanese": "瘦皮猴",
+        "english": ""
     },
     {
         "chinese": "組件",
@@ -2641,12 +2971,17 @@
     },
     {
         "chinese": "絲滑",
-        "taiwanese": "順滑、流暢、順口",
-        "english": ""
+        "taiwanese": "滑順/無阻",
+        "english": "smooth"
     },
     {
         "chinese": "綠色食品",
         "taiwanese": "健康食品",
+        "english": ""
+    },
+    {
+        "chinese": "網上",
+        "taiwanese": "網路上",
         "english": ""
     },
     {
@@ -2655,9 +2990,14 @@
         "english": ""
     },
     {
+        "chinese": "網暴",
+        "taiwanese": "網路霸凌",
+        "english": "cyberbullying"
+    },
+    {
         "chinese": "網民",
         "taiwanese": "網友",
-        "english": ""
+        "english": "netizen"
     },
     {
         "chinese": "網絡",
@@ -2705,6 +3045,11 @@
         "english": ""
     },
     {
+        "chinese": "群發",
+        "taiwanese": "大量轉傳",
+        "english": ""
+    },
+    {
         "chinese": "老摳",
         "taiwanese": "吝嗇鬼",
         "english": ""
@@ -2722,6 +3067,11 @@
     {
         "chinese": "老鐵",
         "taiwanese": "哥們",
+        "english": ""
+    },
+    {
+        "chinese": "考研",
+        "taiwanese": "考研究所",
         "english": ""
     },
     {
@@ -2743,6 +3093,11 @@
         "chinese": "肯尼亞",
         "taiwanese": "肯亞",
         "english": "Kenglishya"
+    },
+    {
+        "chinese": "脫單",
+        "taiwanese": "脫魯",
+        "english": ""
     },
     {
         "chinese": "脫產",
@@ -2860,6 +3215,11 @@
         "english": ""
     },
     {
+        "chinese": "薅羊毛",
+        "taiwanese": "精打細算/貪小便宜/小資一波",
+        "english": ""
+    },
+    {
         "chinese": "薌劇",
         "taiwanese": "歌仔戲",
         "english": ""
@@ -2925,9 +3285,14 @@
         "english": ""
     },
     {
+        "chinese": "西紅柿",
+        "taiwanese": "（牛）蕃茄",
+        "english": "tomato"
+    },
+    {
         "chinese": "視頻",
-        "taiwanese": "影片、視頻",
-        "english": ""
+        "taiwanese": "影片",
+        "english": "video"
     },
     {
         "chinese": "視頻電話",
@@ -2958,6 +3323,11 @@
         "chinese": "註冊表",
         "taiwanese": "系統資料庫",
         "english": "registry"
+    },
+    {
+        "chinese": "評論區",
+        "taiwanese": "留言區",
+        "english": "comment section"
     },
     {
         "chinese": "誤區",
@@ -3026,8 +3396,8 @@
     },
     {
         "chinese": "質量",
-        "taiwanese": "品質、素質、數值",
-        "english": ""
+        "taiwanese": "品質",
+        "english": "quality"
     },
     {
         "chinese": "質量管理",
@@ -3068,6 +3438,16 @@
         "chinese": "超編",
         "taiwanese": "超額",
         "english": ""
+    },
+    {
+        "chinese": "超頂",
+        "taiwanese": "超讚",
+        "english": ""
+    },
+    {
+        "chinese": "趕due",
+        "taiwanese": "趕死線",
+        "english": "meet deadline"
     },
     {
         "chinese": "跟蹤服務",
@@ -3175,6 +3555,11 @@
         "english": "log out"
     },
     {
+        "chinese": "退款",
+        "taiwanese": "退費/退貨/退錢",
+        "english": "refund"
+    },
+    {
         "chinese": "逃生",
         "taiwanese": "逃學生",
         "english": ""
@@ -3250,6 +3635,11 @@
         "english": ""
     },
     {
+        "chinese": "那味",
+        "taiwanese": "那種feel（fu）",
+        "english": ""
+    },
+    {
         "chinese": "郵遞員",
         "taiwanese": "郵差",
         "english": ""
@@ -3262,7 +3652,7 @@
     {
         "chinese": "酸奶",
         "taiwanese": "優格",
-        "english": ""
+        "english": "yogurt"
     },
     {
         "chinese": "酸牛奶",
@@ -3288,6 +3678,11 @@
         "chinese": "鏈接",
         "taiwanese": "連結",
         "english": "Link"
+    },
+    {
+        "chinese": "鏈結",
+        "taiwanese": "連結",
+        "english": "link"
     },
     {
         "chinese": "鏈路",
@@ -3330,13 +3725,18 @@
         "english": "United Arab Emirates"
     },
     {
+        "chinese": "限流",
+        "taiwanese": "降觸及",
+        "english": ""
+    },
+    {
         "chinese": "除塵器",
         "taiwanese": "吸塵器",
         "english": ""
     },
     {
         "chinese": "陰陽怪氣",
-        "taiwanese": "怪裡怪氣",
+        "taiwanese": "嘰嘰歪歪",
         "english": ""
     },
     {
@@ -3486,8 +3886,18 @@
     },
     {
         "chinese": "領導",
-        "taiwanese": "主管、總統",
+        "taiwanese": "上司、主管、老闆",
+        "english": "supervisor"
+    },
+    {
+        "chinese": "領證",
+        "taiwanese": "登記（結婚）",
         "english": ""
+    },
+    {
+        "chinese": "頭像",
+        "taiwanese": "頭貼",
+        "english": "avatar"
     },
     {
         "chinese": "頭盔",
@@ -3531,8 +3941,8 @@
     },
     {
         "chinese": "高光",
-        "taiwanese": "打亮、精彩時刻",
-        "english": ""
+        "taiwanese": "打亮/人生巔峰",
+        "english": "highlight"
     },
     {
         "chinese": "高壓鍋",
@@ -3562,7 +3972,7 @@
     {
         "chinese": "高清",
         "taiwanese": "高畫質",
-        "english": "High Definition"
+        "english": "high definition"
     },
     {
         "chinese": "高玩",
@@ -3618,6 +4028,11 @@
         "chinese": "默認",
         "taiwanese": "預設",
         "english": "Default"
+    },
+    {
+        "chinese": "點讚",
+        "taiwanese": "按讚",
+        "english": "like"
     },
     {
         "chinese": "鼠標",
