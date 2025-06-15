@@ -41,5 +41,33 @@
     },
     "autoScan": {
       "message": "自動掃描"
+    },
+    "navigate": {
+      "message": "移動至"
+    },
+    "prevHighlightBtn": {
+      "message": "上一個"
+    },
+    "nextHighlightBtn": {
+      "message": "下一個"
+    },
+    "highlightNavigation": {
+      "message": "標示處 $CURRENT$ / $TOTAL$",
+      "placeholders": {
+        "current": {
+          "content": "$1"
+        },
+        "total": {
+          "content": "$2"
+        }
+      }
+    },
+    "highlightNavigationFailed": {
+      "message": "跳轉失敗: $ERROR$",
+      "placeholders": {
+        "error": {
+          "content": "$1"
+        }
+      }
     }
   }

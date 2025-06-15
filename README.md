@@ -26,9 +26,11 @@ https://raw.githubusercontent.com/aronhack/Chinese-Vocabulary-Radar/refs/heads/m
 
 ![integrate-with-LLM.jpg](screenshots/chinese-vocabulary-radar-integrate-with-llm.jpg)
 
-
-
-
 ## 內容授權
 中國用語雷達的原始碼授權為 [MIT](https://github.com/aronhack/Chinese-Vocabulary-Radar/blob/main/LICENSE.txt)，文字段落以 [CC 0 公眾領域](https://creativecommons.org/publicdomain/zero/1.0/deed.zh-hant)釋出，你可以盡情分享、改寫或用作商業用途。
 
+## 版本更新紀錄
+
+v1.2.0
+- 新增「移動至上一個/下一個標示處」按鈕
+- 新增按鈕與狀態訊息翻譯

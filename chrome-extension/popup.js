@@ -1,8 +1,13 @@
 const statusText = document.getElementById('status-text');
+const navigationContainer = document.getElementById('navigation-container');
+const navigationInfo = document.getElementById('navigation-info');
+const prevHighlightBtn = document.getElementById('prev-highlight-btn');
+const nextHighlightBtn = document.getElementById('next-highlight-btn');
+
 let vocabData = [];
+let currentHighlightCount = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
-  // console.log('Popup initialized');
 
   // Translate
   document.getElementById('extension-name').textContent = chrome.i18n.getMessage('extensionName');
@@ -11,13 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('auto-scan-label').textContent = chrome.i18n.getMessage('autoScan');
   document.getElementById('status-text').textContent = chrome.i18n.getMessage('readyToScan');
   document.title = chrome.i18n.getMessage('extensionName');  
+  document.getElementById('prev-highlight-btn').textContent = chrome.i18n.getMessage('prevHighlightBtn');
+  document.getElementById('next-highlight-btn').textContent = chrome.i18n.getMessage('nextHighlightBtn');
+  document.getElementById('navigate').textContent = chrome.i18n.getMessage('navigate');
 
   // Load vocabulary data
   fetch('taiwan_china_vocabs.json')
     .then(response => response.json())
     .then(data => {
       vocabData = data;
-      // statusText.textContent = `Loaded ${data.length} vocabulary words`;
       statusText.textContent = chrome.i18n.getMessage('loadedVocabulary', data.length.toString());
 
       // Show the current language
@@ -36,13 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // First, try to ping the content script
       chrome.tabs.sendMessage(tabId, {action: "ping"}, function(response) {
         if (chrome.runtime.lastError || !response) {
-          // Content script not loaded, inject it
           // console.log('Content script not found, injecting...');
           chrome.scripting.executeScript({
             target: {tabId: tabId},
             files: ['content.js']
           }).then(() => {
-            // console.log('Content script injected successfully');
             // Small delay to ensure script is ready
             setTimeout(() => resolve(true), 100);
           }).catch((error) => {
@@ -51,11 +56,30 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         } else {
           // Content script is already loaded
-        //   console.log('Content script already loaded');
           resolve(true);
         }
       });
     });
+  }
+
+  // Function to update navigation UI
+  function updateNavigationUI(highlightCount) {
+    currentHighlightCount = highlightCount;
+    
+    if (highlightCount > 0) {
+      navigationInfo.textContent = `0 / ${highlightCount}`;
+      prevHighlightBtn.disabled = true;
+      nextHighlightBtn.disabled = false;
+    } else {
+      nextHighlightBtn.disabled = true;
+    }
+  }
+
+  // Function to update navigation info
+  function updateNavigationInfo(currentIndex, totalCount, hasNext, hasPrevious) {
+    navigationInfo.textContent = `${currentIndex + 1} / ${totalCount}`;
+    nextHighlightBtn.disabled = !hasNext && currentIndex === totalCount - 1;
+    prevHighlightBtn.disabled = !hasPrevious && currentIndex === 0;
   }
 
   // Set up scan button click handler
@@ -64,8 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Function to perform the scan
-  async function performScan() {
-    statusText.textContent = chrome.i18n.getMessage('scanning');
+  async function performScan(isAutoScan = false) {
+    // Don't show "scanning" message for auto-scans to avoid UI flicker
+    if (!isAutoScan) {
+      statusText.textContent = chrome.i18n.getMessage('scanning');
+    }
 
     try {
       const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
@@ -81,28 +108,104 @@ document.addEventListener('DOMContentLoaded', () => {
       // Send vocabulary data to content script for scanning
       chrome.tabs.sendMessage(tab.id, {
         action: "scan", 
-        vocabData: vocabData
+        vocabData: vocabData,
+        isAutoScan: isAutoScan
       }, function(response) {
         
         if (chrome.runtime.lastError) {
-          statusText.textContent = 'Error: ' + chrome.runtime.lastError.message + 
-            '\n\nTry refreshing the page and scanning again.';
+          // Only show error for manual scans
+          if (!isAutoScan) {
+            statusText.textContent = 'Error: ' + chrome.runtime.lastError.message + 
+              '\n\nTry refreshing the page and scanning again.';
+          }
           return;
         }
 
         if (response && response.success) {
-          statusText.textContent = chrome.i18n.getMessage('scanCompleted', response.highlightedCount.toString());
-
+          // Handle skipped auto-scans
+          if (response.skipped) {
+            console.log("Auto-scan was skipped due to navigation activity");
+            return;
+          }
+          
+          // Only update UI for manual scans or if highlight count changed
+          if (!isAutoScan || response.highlightedCount !== currentHighlightCount) {
+            statusText.textContent = chrome.i18n.getMessage('scanCompleted', response.highlightedCount.toString());
+            updateNavigationUI(response.highlightedCount);
+          }
         } else {
-          statusText.textContent = 'Scan failed or no response received';
+          if (!isAutoScan) {
+            statusText.textContent = 'Scan failed or no response received';
+            updateNavigationUI(0);
+          }
         }
       });
       
     } catch (error) {
       console.error('Error during scan:', error);
-      statusText.textContent = 'Error: ' + error.message;
+      if (!isAutoScan) {
+        statusText.textContent = 'Error: ' + error.message;
+        updateNavigationUI(0);
+      }
     }
   }
+
+  // Navigation button handlers
+  nextHighlightBtn.addEventListener('click', async () => {
+    try {
+      const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+      
+      const scriptLoaded = await ensureContentScript(tab.id);
+      if (!scriptLoaded) {
+        statusText.textContent = 'Failed to load content script. Try refreshing the page.';
+        return;
+      }
+      
+      chrome.tabs.sendMessage(tab.id, {action: "jumpToNext"}, function(response) {
+        if (chrome.runtime.lastError) {
+          statusText.textContent = 'Error: ' + chrome.runtime.lastError.message;
+          return;
+        }
+        
+        if (response && response.success) {
+          updateNavigationInfo(response.currentIndex, response.totalCount, response.hasNext, response.currentIndex > 0);
+          statusText.textContent = response.message;
+        } else {
+          statusText.textContent = 'Failed to navigate to next highlight';
+        }
+      });
+    } catch (error) {
+      statusText.textContent = 'Error: ' + error.message;
+    }
+  });
+
+  prevHighlightBtn.addEventListener('click', async () => {
+    try {
+      const [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+      
+      const scriptLoaded = await ensureContentScript(tab.id);
+      if (!scriptLoaded) {
+        statusText.textContent = 'Failed to load content script. Try refreshing the page.';
+        return;
+      }
+      
+      chrome.tabs.sendMessage(tab.id, {action: "jumpToPrevious"}, function(response) {
+        if (chrome.runtime.lastError) {
+          statusText.textContent = 'Error: ' + chrome.runtime.lastError.message;
+          return;
+        }
+        
+        if (response && response.success) {
+          updateNavigationInfo(response.currentIndex, response.totalCount, response.currentIndex < response.totalCount - 1, response.hasPrevious);
+          statusText.textContent = response.message;
+        } else {
+          statusText.textContent = 'Failed to navigate to previous highlight';
+        }
+      });
+    } catch (error) {
+      statusText.textContent = 'Error: ' + error.message;
+    }
+  });
 
   // Set up auto scan interval
   let autoScanInterval;
@@ -113,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.target.checked) {
       // Start auto scan every 10 seconds
-      autoScanInterval = setInterval(performScan, 10000);
+      autoScanInterval = setInterval(() => performScan(true), 10000);
       // Perform initial scan immediately
       performScan();
     } else {
@@ -127,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize auto scan if enabled
   chrome.storage.sync.get(['autoScanSetting'], function(result) {
     if (result.autoScanSetting) {
-      autoScanInterval = setInterval(performScan, 10000);
+      autoScanInterval = setInterval(() => performScan(true), 10000);
       // Perform initial scan immediately if auto scan is enabled
       performScan();
     }
@@ -154,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (response && response.success) {
           statusText.textContent = chrome.i18n.getMessage('highlightsCleared');
+          updateNavigationUI(0);
         } else {
           statusText.textContent = chrome.i18n.getMessage('failedToClearHighlights');
         }
