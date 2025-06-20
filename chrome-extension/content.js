@@ -6,6 +6,8 @@ let currentHighlightIndex = -1;
 let allHighlights = [];
 let navigationActive = false;
 let lastNavigationTime = 0;
+let vocabData = []; // Add this to store vocabulary data
+let hoverTimeout; // Add timeout for hover popup
 
 // Listen for messages from popup
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -15,6 +17,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     // console.log("Ping response sent");
   } else if (request.action === "scan") {
     // console.log("Received scan message");
+    
+    // Store vocabulary data for later use
+    vocabData = request.vocabData || [];
     
     // Check if navigation was recently active (within last 30 seconds)
     const timeSinceLastNav = Date.now() - lastNavigationTime;
@@ -147,6 +152,45 @@ function highlightVocabulary(vocabData) {
   
   // console.log("Searching for terms:", searchTerms);
   
+  // Helper function to check if an element is visible
+  function isElementVisible(element) {
+    // Check if element exists
+    if (!element || !element.parentElement) {
+      return false;
+    }
+    
+    // Skip certain tags that are never visible content
+    const invisibleTags = ['SCRIPT', 'STYLE', 'HEAD', 'META', 'LINK', 'TITLE', 'NOSCRIPT'];
+    if (invisibleTags.includes(element.tagName)) {
+      return false;
+    }
+    
+    // Check if any parent element is hidden
+    let currentElement = element;
+    while (currentElement && currentElement !== document.body) {
+      const style = window.getComputedStyle(currentElement);
+      
+      // Check for hidden styles
+      if (style.display === 'none' || 
+          style.visibility === 'hidden' || 
+          style.opacity === '0' ||
+          style.position === 'absolute' && 
+          (parseInt(style.left) < -9999 || parseInt(style.top) < -9999)) {
+        return false;
+      }
+      
+      currentElement = currentElement.parentElement;
+    }
+    
+    // Check if element has dimensions (basic visibility check)
+    const rect = element.getBoundingClientRect();
+    if (rect.width === 0 && rect.height === 0) {
+      return false;
+    }
+    
+    return true;
+  }
+  
   // Get all text nodes in the document
   const walker = document.createTreeWalker(
     document.body,
@@ -155,9 +199,21 @@ function highlightVocabulary(vocabData) {
       acceptNode: function(node) {
         // Skip script and style elements
         const parent = node.parentElement;
-        if (parent && (parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE')) {
+        if (!parent) {
           return NodeFilter.FILTER_REJECT;
         }
+        
+        // Skip invisible elements
+        if (!isElementVisible(parent)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        
+        // Skip certain parent tags
+        const skipTags = ['SCRIPT', 'STYLE', 'HEAD', 'META', 'LINK', 'TITLE', 'NOSCRIPT'];
+        if (skipTags.includes(parent.tagName)) {
+          return NodeFilter.FILTER_REJECT;
+        }
+        
         // Only process nodes with actual content
         return node.textContent.trim().length > 0 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       }
@@ -172,6 +228,11 @@ function highlightVocabulary(vocabData) {
   
   // Process each text node
   textNodes.forEach(textNode => {
+    // Double-check visibility before processing
+    if (!isElementVisible(textNode.parentElement)) {
+      return;
+    }
+    
     let content = textNode.textContent;
     let hasMatches = false;
     
@@ -194,6 +255,12 @@ function highlightVocabulary(vocabData) {
       // Count the highlights in this node
       const highlights = span.querySelectorAll('.vocab-highlight');
       highlightedCount += highlights.length;
+      
+      // Add hover event listeners to each highlight
+      highlights.forEach(highlight => {
+        highlight.addEventListener('mouseenter', handleHighlightHover);
+        highlight.addEventListener('mouseleave', handleHighlightLeave);
+      });
       
       // Replace the text node with the new span
       textNode.parentNode.replaceChild(span, textNode);
@@ -296,6 +363,9 @@ function jumpToNextHighlight() {
     
     // Focus the element for accessibility
     currentHighlight.focus();
+    
+    // Show vocabulary popup
+    showVocabularyPopup(currentHighlight);
   } else {
     navigationActive = false;
     throw new Error("Could not find valid highlight to navigate to");
@@ -367,6 +437,9 @@ function jumpToPreviousHighlight() {
     
     // Focus the element for accessibility
     currentHighlight.focus();
+    
+    // Show vocabulary popup
+    showVocabularyPopup(currentHighlight);
   } else {
     navigationActive = false;
     throw new Error("Could not find valid highlight to navigate to");
@@ -399,6 +472,9 @@ function clearHighlights() {
   if (styleElement) {
     styleElement.remove();
   }
+  
+  // Hide any open popups
+  hideVocabularyPopup();
   
   // Reset navigation variables
   allHighlights = [];
@@ -450,6 +526,76 @@ function addHighlightStyles() {
     .vocab-highlight-container {
       display: inline !important;
     }
+    
+    /* Small Vocabulary Popup Styles */
+    .vocab-popup {
+      position: absolute;
+      background-color: #fffbef;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 8px 12px 12px 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      z-index: 10001;
+      max-width: 280px;
+      min-width: 200px;
+      font-family: "Microsoft JhengHei", "PingFang TC", "Hiragino Sans CNS", "Apple LiGothic Medium", sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    
+    .vocab-popup-header {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 4px;
+      margin-top: -2px;
+    }
+    
+    .vocab-popup-close {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #999;
+      padding: 0;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    
+    .vocab-popup-close:hover {
+      color: #666;
+    }
+    
+    .vocab-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .language-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    
+    .language-label {
+      font-size: 11px;
+      font-weight: bold;
+      color: #888;
+      min-width: 32px;
+      flex-shrink: 0;
+    }
+    
+    .language-value {
+      font-size: 13px;
+      color: #333;
+      flex: 1;
+      word-break: break-word;
+    }
   `;
   
   document.head.appendChild(style);
@@ -493,4 +639,149 @@ function verifyHighlightsIntegrity() {
   
   console.log(`Valid highlights in array: ${validCount}/${allHighlights.length}`);
   return validCount === allHighlights.length && allHighlights.length === actualHighlights.length;
+}
+
+// Function to handle highlight hover
+function handleHighlightHover(event) {
+  // Clear any existing hover timeout
+  if (hoverTimeout) {
+    clearTimeout(hoverTimeout);
+  }
+  
+  // Don't show hover popup if we're currently navigating
+  if (navigationActive) {
+    return;
+  }
+  
+  // Show popup after a short delay to avoid flickering
+  hoverTimeout = setTimeout(() => {
+    showVocabularyPopup(event.target, true); // true indicates this is a hover popup
+  }, 300);
+}
+
+// Function to handle highlight mouse leave
+function handleHighlightLeave(event) {
+  // Clear hover timeout
+  if (hoverTimeout) {
+    clearTimeout(hoverTimeout);
+  }
+  
+  // Hide popup after a short delay to allow moving cursor to popup
+  hoverTimeout = setTimeout(() => {
+    const popup = document.getElementById('vocab-popup');
+    if (popup && popup.getAttribute('data-hover') === 'true') {
+      hideVocabularyPopup();
+    }
+  }, 500);
+}
+
+// Function to show vocabulary popup
+function showVocabularyPopup(highlightElement, isHover = false) {
+  // Get the vocabulary term from the highlight element
+  const vocabTerm = highlightElement.getAttribute('data-vocab');
+  if (!vocabTerm || !vocabData.length) {
+    return;
+  }
+  
+  // Find the vocabulary data for this term
+  const vocabItem = vocabData.find(item => item.chinese === vocabTerm);
+  if (!vocabItem) {
+    return;
+  }
+  
+  // Remove any existing popup
+  hideVocabularyPopup();
+  
+  // Create popup container (no overlay needed for small tooltip)
+  const popup = document.createElement('div');
+  popup.id = 'vocab-popup';
+  popup.className = 'vocab-popup show';
+  popup.setAttribute('data-hover', isHover.toString()); // Track if this is a hover popup
+  
+  // Create popup content
+  popup.innerHTML = `
+    <div class="vocab-popup-header">
+      <button class="vocab-popup-close" id="vocab-popup-close">&times;</button>
+    </div>
+    <div class="vocab-content">
+      <div class="language-row">
+        <span class="language-label">中國:</span>
+        <span class="language-value">${vocabItem.chinese}</span>
+      </div>
+      <div class="language-row">
+        <span class="language-label">台灣:</span>
+        <span class="language-value">${vocabItem.taiwanese}</span>
+      </div>
+      ${vocabItem.english ? `
+        <div class="language-row">
+          <span class="language-label">英文:</span>
+          <span class="language-value">${vocabItem.english}</span>
+        </div>
+      ` : ''}
+    </div>
+  `;
+  
+  // Add click handler for close button
+  popup.querySelector('#vocab-popup-close').addEventListener('click', hideVocabularyPopup);
+  
+  // Add hover handlers to popup to keep it visible
+  if (isHover) {
+    popup.addEventListener('mouseenter', () => {
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
+    });
+    
+    popup.addEventListener('mouseleave', () => {
+      hoverTimeout = setTimeout(() => {
+        hideVocabularyPopup();
+      }, 200);
+    });
+  }
+  
+  // Position the popup near the highlighted element
+  const rect = highlightElement.getBoundingClientRect();
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+  
+  // Add to page first to get dimensions
+  document.body.appendChild(popup);
+  
+  // Calculate position
+  const popupRect = popup.getBoundingClientRect();
+  let top = rect.bottom + scrollTop + 10; // 10px below the element
+  let left = rect.left + scrollLeft;
+  
+  // Adjust if popup would go off screen
+  if (left + popupRect.width > window.innerWidth) {
+    left = window.innerWidth - popupRect.width - 20;
+  }
+  if (left < 10) {
+    left = 10;
+  }
+  
+  // If popup would go below viewport, show it above the element
+  if (rect.bottom + popupRect.height + 10 > window.innerHeight) {
+    top = rect.top + scrollTop - popupRect.height - 10;
+  }
+  
+  // Set final position
+  popup.style.top = `${top}px`;
+  popup.style.left = `${left}px`;
+  
+  // For navigation popups, they stay until manually closed or next navigation
+  // For hover popups, they auto-hide when mouse leaves
+}
+
+// Function to hide vocabulary popup
+function hideVocabularyPopup() {
+  const popup = document.getElementById('vocab-popup');
+  if (popup) {
+    popup.remove();
+  }
+  
+  // Clear any pending hover timeout
+  if (hoverTimeout) {
+    clearTimeout(hoverTimeout);
+  }
 }

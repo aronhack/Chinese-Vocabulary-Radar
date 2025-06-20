@@ -143,12 +143,202 @@
         font-weight: bold;
         margin-bottom: 4px;
       }
+      
+      .terms-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 2px solid #2196F3;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 10000;
+        max-width: 400px;
+        min-width: 300px;
+        display: none;
+      }
+      
+      .terms-popup.show {
+        display: block;
+      }
+      
+      .terms-popup-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      
+      .terms-popup-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+      
+      .terms-popup-close {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #666;
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .terms-popup-close:hover {
+        color: #333;
+      }
+      
+      .terms-content {
+        margin-bottom: 15px;
+      }
+      
+      .term-item {
+        margin-bottom: 12px;
+        padding: 8px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        border-left: 3px solid #2196F3;
+      }
+      
+      .term-label {
+        font-size: 12px;
+        font-weight: bold;
+        color: #666;
+        margin-bottom: 4px;
+        text-transform: uppercase;
+      }
+      
+      .term-text {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.4;
+      }
+      
+      .terms-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9999;
+        display: none;
+      }
+      
+      .terms-popup-overlay.show {
+        display: block;
+      }
+      
+      .highlight-popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 2px solid #4CAF50;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 10001;
+        max-width: 450px;
+        min-width: 350px;
+        display: none;
+      }
+      
+      .highlight-popup.show {
+        display: block;
+      }
+      
+      .highlight-popup-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      
+      .highlight-popup-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+      
+      .highlight-popup-close {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #666;
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .highlight-popup-close:hover {
+        color: #333;
+      }
+      
+      .highlight-content {
+        margin-bottom: 15px;
+      }
+      
+      .language-section {
+        margin-bottom: 15px;
+      }
+      
+      .language-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #4CAF50;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 4px;
+      }
+      
+      .language-text {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.5;
+        padding: 8px;
+        background-color: #f8f9fa;
+        border-radius: 4px;
+        border-left: 3px solid #4CAF50;
+      }
+      
+      .highlight-popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 10000;
+        display: none;
+      }
+      
+      .highlight-popup-overlay.show {
+        display: block;
+      }
     </style>
   </head>
   <body>
     <div class="header" style="display: flex; align-items: center; justify-content: flex-start;">
       <h1 id="extension-name" data-i18n="extensionName"></h1>
-      <div id="version-info">v1.2.0</div>
+      <div id="version-info">v1.3.0</div>
     </div>
 
     <div id="status-text" class="text" data-i18n="readyToScan" style="margin: 15px 0;"></div>
@@ -171,6 +361,18 @@
         <button class="nav-button navigation" id="prev-highlight-btn" data-i18n="prevHighlightBtn"></button>
         <button class="nav-button navigation" id="next-highlight-btn" data-i18n="nextHighlightBtn"></button>
         <div class="navigation-info" id="navigation-info">0 / 0</div>
+      </div>
+    </div>
+    
+    <!-- Terms Popup -->
+    <div class="terms-popup-overlay" id="terms-popup-overlay"></div>
+    <div class="terms-popup" id="terms-popup">
+      <div class="terms-popup-header">
+        <div class="terms-popup-title" id="terms-popup-title">Terms</div>
+        <button class="terms-popup-close" id="terms-popup-close">&times;</button>
+      </div>
+      <div class="terms-content" id="terms-content">
+        <!-- Terms will be dynamically populated here -->
       </div>
     </div>
     

@@ -34,3 +34,7 @@ https://raw.githubusercontent.com/aronhack/Chinese-Vocabulary-Radar/refs/heads/m
 v1.2.0
 - 新增「移動至上一個/下一個標示處」按鈕
 - 新增按鈕與狀態訊息翻譯
+
+v1.3.0
+- 新增小視窗，顯示中國與台灣用語對照表
+- 修正計數器顯示錯誤
