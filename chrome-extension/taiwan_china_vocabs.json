@@ -915,11 +915,6 @@
         "english": "The United Republic of Tanzania"
     },
     {
-        "chinese": "域",
-        "taiwanese": "網域",
-        "english": "domain"
-    },
-    {
         "chinese": "埠口",
         "taiwanese": "通訊埠",
         "english": ""
@@ -943,6 +938,11 @@
         "chinese": "塑料",
         "taiwanese": "塑膠、塑膠微粒",
         "english": ""
+    },
+    {
+        "chinese": "塑料袋",
+        "taiwanese": "塑膠袋",
+        "english": "plastic bag"
     },
     {
         "chinese": "壁紙",
@@ -1347,6 +1347,11 @@
     {
         "chinese": "巨",
         "taiwanese": "非常/超級",
+        "english": ""
+    },
+    {
+        "chinese": "巨大",
+        "taiwanese": "龐大",
         "english": ""
     },
     {
@@ -2670,6 +2675,11 @@
         "english": ""
     },
     {
+        "chinese": "省心",
+        "taiwanese": "不操心、少費心",
+        "english": ""
+    },
+    {
         "chinese": "省流",
         "taiwanese": "懶人包、長話短說",
         "english": ""
@@ -3023,6 +3033,11 @@
         "chinese": "線纜",
         "taiwanese": "電纜/電線",
         "english": "Cable"
+    },
+    {
+        "chinese": "編程",
+        "taiwanese": "程式撰寫/程式設計/寫程式",
+        "english": "coding"
     },
     {
         "chinese": "編程語言",
@@ -3957,7 +3972,7 @@
     {
         "chinese": "高效",
         "taiwanese": "高效率",
-        "english": "efficienglisht"
+        "english": "efficient"
     },
     {
         "chinese": "高標準內銷房",
