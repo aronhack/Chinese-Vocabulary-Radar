@@ -379,7 +379,7 @@ function jumpToNextHighlight() {
   return {
     currentIndex: currentHighlightIndex,
     totalCount: allHighlights.length,
-    hasNext: currentHighlightIndex < allHighlights.length - 1
+    hasNext: allHighlights.length > 1  // Always true if more than one highlight (cycling)
   };
 }
 
@@ -453,7 +453,7 @@ function jumpToPreviousHighlight() {
   return {
     currentIndex: currentHighlightIndex,
     totalCount: allHighlights.length,
-    hasPrevious: currentHighlightIndex > 0
+    hasPrevious: allHighlights.length > 1  // Always true if more than one highlight (cycling)
   };
 }
 

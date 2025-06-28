@@ -66,20 +66,28 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateNavigationUI(highlightCount) {
     currentHighlightCount = highlightCount;
     
-    if (highlightCount > 0) {
+    if (highlightCount > 1) {
+      // Multiple highlights: enable both buttons for cycling
+      navigationInfo.textContent = `0 / ${highlightCount}`;
+      prevHighlightBtn.disabled = false;
+      nextHighlightBtn.disabled = false;
+    } else if (highlightCount === 1) {
+      // Single highlight: disable both buttons (no cycling needed)
       navigationInfo.textContent = `0 / ${highlightCount}`;
       prevHighlightBtn.disabled = true;
-      nextHighlightBtn.disabled = false;
-    } else {
       nextHighlightBtn.disabled = true;
+    } else {
+      // No highlights: disable both buttons
+      nextHighlightBtn.disabled = true;
+      prevHighlightBtn.disabled = true;
     }
   }
 
   // Function to update navigation info
   function updateNavigationInfo(currentIndex, totalCount, hasNext, hasPrevious) {
     navigationInfo.textContent = `${currentIndex + 1} / ${totalCount}`;
-    nextHighlightBtn.disabled = !hasNext && currentIndex === totalCount - 1;
-    prevHighlightBtn.disabled = !hasPrevious && currentIndex === 0;
+    nextHighlightBtn.disabled = !hasNext;
+    prevHighlightBtn.disabled = !hasPrevious;
   }
 
   // Set up scan button click handler
@@ -168,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (response && response.success) {
-          updateNavigationInfo(response.currentIndex, response.totalCount, response.hasNext, response.currentIndex > 0);
+          updateNavigationInfo(response.currentIndex, response.totalCount, response.hasNext, response.hasPrevious);
           statusText.textContent = response.message;
         } else {
           statusText.textContent = 'Failed to navigate to next highlight';
@@ -196,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         if (response && response.success) {
-          updateNavigationInfo(response.currentIndex, response.totalCount, response.currentIndex < response.totalCount - 1, response.hasPrevious);
+          updateNavigationInfo(response.currentIndex, response.totalCount, response.hasNext, response.hasPrevious);
           statusText.textContent = response.message;
         } else {
           statusText.textContent = 'Failed to navigate to previous highlight';
