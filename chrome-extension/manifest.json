@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.3.1",
+  "version": "1.4.1",
   "default_locale": "zh_TW",
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
@@ -32,6 +32,10 @@
     "activeTab",
     "scripting",
     "storage"
+  ],
+  
+  "host_permissions": [
+    "https://radar.aronhack.com/*"
   ],
   
   "web_accessible_resources": [

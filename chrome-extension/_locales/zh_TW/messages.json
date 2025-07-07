@@ -19,6 +19,9 @@
     "clearButton": {
       "message": "清除"
     },
+    "updateButton": {
+      "message": "更新"
+    },
     "scanning": {
       "message": "掃描中..."
     },
@@ -69,5 +72,26 @@
           "content": "$1"
         }
       }
+    },
+    "submitVocabulary": {
+      "message": "新增字詞"
+    },
+    "chineseLabel": {
+      "message": "中國用語:"
+    },
+    "taiwaneseLabel": {
+      "message": "台灣用語:"
+    },
+    "englishLabel": {
+      "message": "英文翻譯:"
+    },
+    "descriptionLabel": {
+      "message": "描述說明:"
+    },
+    "submitBtn": {
+      "message": "提交"
+    },
+    "clearFormBtn": {
+      "message": "清空"
     }
   }
