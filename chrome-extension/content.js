@@ -379,7 +379,8 @@ function jumpToNextHighlight() {
   return {
     currentIndex: currentHighlightIndex,
     totalCount: allHighlights.length,
-    hasNext: allHighlights.length > 1  // Always true if more than one highlight (cycling)
+    hasNext: allHighlights.length >= 1,  // True if there's at least one highlight
+    hasPrevious: allHighlights.length >= 1  // True if there's at least one highlight
   };
 }
 
@@ -453,7 +454,8 @@ function jumpToPreviousHighlight() {
   return {
     currentIndex: currentHighlightIndex,
     totalCount: allHighlights.length,
-    hasPrevious: allHighlights.length > 1  // Always true if more than one highlight (cycling)
+    hasNext: allHighlights.length >= 1,  // True if there's at least one highlight
+    hasPrevious: allHighlights.length >= 1  // True if there's at least one highlight
   };
 }
 

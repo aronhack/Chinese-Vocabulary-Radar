@@ -173,10 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
       prevHighlightBtn.disabled = false;
       nextHighlightBtn.disabled = false;
     } else if (highlightCount === 1) {
-      // Single highlight: disable both buttons (no cycling needed)
+      // Single highlight: enable both buttons (user can still navigate to the single highlight)
       navigationInfo.textContent = `0 / ${highlightCount}`;
-      prevHighlightBtn.disabled = true;
-      nextHighlightBtn.disabled = true;
+      prevHighlightBtn.disabled = false;
+      nextHighlightBtn.disabled = false;
     } else {
       // No highlights: disable both buttons
       nextHighlightBtn.disabled = true;
@@ -186,9 +186,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to update navigation info
   function updateNavigationInfo(currentIndex, totalCount, hasNext, hasPrevious) {
+    console.log('[NavigationInfo] currentIndex:', currentIndex, 'totalCount:', totalCount, 'hasNext:', hasNext, 'hasPrevious:', hasPrevious);
     navigationInfo.textContent = `${currentIndex + 1} / ${totalCount}`;
-    nextHighlightBtn.disabled = !hasNext;
-    prevHighlightBtn.disabled = !hasPrevious;
+    if (totalCount >= 1) {
+      nextHighlightBtn.disabled = false;
+      prevHighlightBtn.disabled = false;
+    } else {
+      nextHighlightBtn.disabled = true;
+      prevHighlightBtn.disabled = true;
+    }
   }
 
   // Set up scan button click handler
